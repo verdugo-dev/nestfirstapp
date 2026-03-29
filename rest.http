@@ -1,0 +1,11 @@
+POST http://localhost:3000/tasks
+content-type: application/json
+
+{
+    "title": "tengo que limpiar mi casa",
+    "description": "tengo que hacerlo a las 3"
+}
+
+###
+
+GET http://localhost:3000/tasks
