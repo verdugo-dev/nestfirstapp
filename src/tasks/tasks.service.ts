@@ -30,7 +30,19 @@ export class TasksService {
         return newTask;
     }
 
-    updateTask() {}
+    getTaskById(id: string): Task | undefined {
+        return this.tasks.find(task => task.id === id);
+    }
 
-    deleteTask() {}
+    updateTask(id: string, updatedFields: any) {
+        const task = this.getTaskById(id);
+        const newTask = {...task, ...updatedFields}
+        this.tasks = this.tasks.map(task => task.id === id ? newTask : task);
+        return this.tasks;
+    }
+
+    deleteTask(id: string) {
+        this.tasks = this.tasks.filter((task) => task.id !== id);
+        return this.tasks;
+    }
 }

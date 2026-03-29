@@ -9,3 +9,17 @@ content-type: application/json
 ###
 
 GET http://localhost:3000/tasks
+
+###
+
+DELETE  http://localhost:3000/tasks/1
+
+###
+
+PATCH http://localhost:3000/tasks/1
+content-type: application/json
+
+{
+    "title": "tengo que limpiar mi casa",
+    "description": "tengo que hacerlo a las 4"
+}
